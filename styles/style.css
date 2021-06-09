@@ -13,31 +13,36 @@ header{
     display: grid;
     grid-template-columns: 1.5rem 1fr 1.5rem;
     grid-template-rows: 1fr;
-    justify-self: center;
+    justify-items: center;
+    align-items: center;
     z-index: 1;
     background-color: #fff;
+    text-align: center;
 }
 
 h1{
     display: none;
 }
 
-header img{
+header a{
     width: 7rem;
     grid-column: 2/3;
     grid-row: 1/2;
-    display: block;
-    margin: auto;
+
+}
+
+header img{
+    width: 7rem;
 }
 
 header button:first-of-type{
-    background-image: url(file:///Users/jamero/Library/Mobile%20Documents/com~apple~CloudDocs/Werk/PokeBro/website/images/icons/menu.png);
+    background-image: url(https://github.com/JRStudioUX/pokebro/blob/main/images/icons/menu.png?raw=true);
     grid-column: 1/2;
     grid-row: 1/2;
 }
 
 header button{
-    background-image: url(file:///Users/jamero/Library/Mobile%20Documents/com~apple~CloudDocs/Werk/PokeBro/website/images/icons/cart.png);
+    background-image: url(https://github.com/JRStudioUX/pokebro/blob/main/images/icons/cart.png?raw=true);
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
@@ -53,6 +58,29 @@ header button{
 
 button:hover{
     cursor: pointer;
+}
+
+#headerNav{
+    justify-self: left;
+    display: none;
+    margin: 0;
+    grid-column: 2/3;
+}
+
+#headerNav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#headerNav ul li{
+    display: inline-block;
+    margin: auto;
+    margin-right: 1rem;
+}
+
+#headerNav ul li:first-of-type{
+    font-weight: 600;
 }
 
 #menu{
@@ -144,7 +172,7 @@ main{
 
 #highlights{
     position: relative;
-    height: 10rem;
+    height: 50vh;
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(3,71,155,1) 80%);
 }
@@ -152,14 +180,14 @@ main{
 #highlights div{
     position: absolute;
     bottom: -9.75rem;
-    width: 15rem;
-    left: calc(50% - 7.5rem);
+    width: calc(100% - 2rem);
+    left: 1rem;
 }
 
 #highlights button{
     font-family: kallisto, sans-serif;
     font-size: 1rem;
-    width: 15rem;
+    width: 100%;
     margin: auto;
     height: 3.5rem;
     margin-top: 0.5rem;
@@ -173,6 +201,10 @@ main{
     width: calc(100% - 2rem);
     margin: auto;
     margin-top: 12rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 }
 
 a{
@@ -187,10 +219,11 @@ a:hover{
 .product{
     background-color: #f1f1f1;
     padding: 1rem;
-    margin: 0;
+    margin: 0 0 2rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1rem 1fr 1rem;
     grid-template-rows: 10rem 1fr 2rem 3rem;
+    max-width: 20rem;
 }
 
 .product img{
@@ -238,7 +271,7 @@ a:hover{
     grid-column: 3/4;
     grid-row: 4/5;
     margin-right: 1.5rem;
-    
+    fill: #fff;
 }
 
 .product svg{
@@ -347,16 +380,22 @@ footer{
 
 #productPage section img{
     display: block;
-    width: 75%;
+    width: 70%;
     margin: auto;
+    margin: 2rem 15% 3rem 15%;
 }
 
 #productPage section h2{
     font-size: 1.5rem;
+    margin: 0 0 1rem 0;
 }
 
 #productPage section p{
     font-size: 1rem;
+}
+
+p{
+    line-height: 1.5rem;
 }
 
 #productPage div{
@@ -375,10 +414,10 @@ footer{
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     font-weight: 600;
     text-align-last: left;
-    padding-left: 0.75rem;
+    padding-left: 1rem;
     font-size: 0.75rem;
     height: 3rem;
-    width: 9rem;
+    width: calc(80%  - 1.5rem);
     position: relative;
 }
 
@@ -386,12 +425,13 @@ footer{
     fill: #fff;
     height: 1rem;
     position: absolute;
-    left: 8.5rem;
+    right: 1rem;
     top: calc(50% - 0.5rem);
 }
 
 #productPage div span{
-    margin-left: 10%;
+    margin-left: 5%;
+    width: 15%;
     background-color: #fff;
 }
 
@@ -439,3 +479,48 @@ footer{
     margin-left: 0;
     margin-right: 0;
 }
+
+@media only screen and (min-width: 830px) {
+    #highlights div{
+        left: calc(50% - 25rem);
+        width: 50rem;
+        bottom: -1.75rem;
+    }
+    
+    #highlights button{
+        display: inline-block;
+        width: 33%;
+    }
+
+    #highlightsProducts{
+        margin-top: 4rem;
+    }
+  }
+
+@media only screen and (min-width: 1050px){
+    header{
+        grid-template-columns: 1.5rem 40% 1fr 40% 1.5rem;
+    }
+
+    header button:first-of-type{
+        display: none;
+    }
+
+    header button{
+        grid-column: 5/6;
+    }
+
+    header a{
+        grid-column: 3/4;
+    }
+
+    #headerNav{
+        display: block;
+    }
+
+    nav{
+        display: none;
+    }
+}
+
+  
